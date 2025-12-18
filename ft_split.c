@@ -5,113 +5,80 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 16:40:37 by vblescin          #+#    #+#             */
-/*   Updated: 2025/11/14 21:32:05 by vbleskin         ###   ########.fr       */
+/*   Created: 2025/12/18 20:24:35 by vbleskin          #+#    #+#             */
+/*   Updated: 2025/12/18 22:49:31 by vbleskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
-// #include <stdio.h>
+#include <stdlib.h>
 
-static int	ft_countwords(char const *str, char sep)
+static void	*ft_free_all(char **strs)
 {
 	int	i;
-	int	nb;
-	int	newword;
 
-	i = ((nb = (newword = 0)));
-	while (str[i])
-	{
-		if (str[i] != sep && !newword)
-		{
-			nb++;
-			while (str[i] && str[i] != sep)
-				i++;
-			newword = 1;
-		}
-		if (str[i] == sep)
-		{
-			newword = 0;
-			while (str[i] && str[i] == sep)
-				i++;
-		}
-	}
-	return (nb);
+	i = 0;
+	while (strs[i])
+		free(strs[i++]);
+	free(strs);
+	return (NULL);
 }
 
-static int	ft_wordlen(char const *src, char sep)
+static size_t	ft_wordlen(const char *start, char sep)
 {
-	int	len;
+	size_t	len;
 
 	len = 0;
-	while (*src != sep && *src)
-	{
+	while (*(start + len) && *(start + len) != sep)
 		len++;
-		src++;
-	}
 	return (len);
 }
 
-static int	ft_ignore_sep(const char **src, char sep)
+static int	ft_countwords(const char *str, char sep)
 {
-	while (**src == sep && **src)
-		(*src)++;
-	return (**src != '\0');
-}
+	int		count;
+	size_t	len;
 
-static int	ft_alloc(void **str, int size, int count)
-{		
-	*str = malloc(count * size);
-	if (!*str)
-		return (0);
-	return (1);
-}
-
-char	**ft_split(char const *src, char s)
-{
-	char	**dest;
-	int		word;
-	int		start;
-	int		end;
-
-	if (!ft_alloc((void **)&dest, (ft_countwords(src, s) + 1), sizeof(char *)))
-		return (NULL);
-	word = ((start = (end = 0)));
-	while (*src)
+	count = 0;
+	while (*str)
 	{
-		if (!ft_ignore_sep(&src, s))
-			break ;
-		end = ft_wordlen(src, s);
-		while (start < end)
+		if (*str != sep)
 		{
-			if (start == 0)
-				if (!ft_alloc((void **)&dest[word], end + 1, sizeof(char)))
-					return (NULL);
-			dest[word][start++] = *src++;
+			len = ft_wordlen(str, sep);
+			str += len;
+			count++;
 		}
-		dest[word++][start] = '\0';
-		start = 0;
+		else
+			str++;
 	}
-	dest[word] = (NULL);
+	return (count);
+}
+
+
+char	**ft_split(const char *str, char sep)
+{
+	char		**dest;
+	int			word;
+	size_t		len;
+
+	dest = malloc(sizeof(char *) * (ft_countwords(str, sep) + 1));
+	if (!str || !dest)
+		return (NULL);
+	word = 0;
+	while (*str)
+	{
+		if (*str != sep)
+		{
+			len = ft_wordlen(str, sep);
+			dest[word] = malloc(sizeof(char) * (len + 1));
+			if (!dest[word])
+				return (ft_free_all(dest));
+			ft_strlcpy(dest[word++], str, len + 1);
+			str += len;
+		}
+		else
+			str++;
+	}
+	dest[word] = NULL;
 	return (dest);
 }
-
-// int	main(void)
-// {
-// 	char	*src = "";
-// 	char	sep = ' ';
-// 	char	**str = ft_split(src, sep);
-// 	int		i = 0;
-
-// 	printf("SOURCE : %s\n", src);
-// 	printf("SEPARATEUR : '%c'\n", sep);
-// 	printf("DEST :\n");
-// 	while (str[i])
-// 	{
-// 		printf("%d : %s\n", i, str[i]);
-// 		i++;
-// 	}
-// 	free(str);
-// 	return (0);
-// }
