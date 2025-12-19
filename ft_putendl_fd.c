@@ -6,11 +6,10 @@
 /*   By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:12:08 by vbleskin          #+#    #+#             */
-/*   Updated: 2025/11/07 19:05:00 by vbleskin         ###   ########.fr       */
+/*   Updated: 2025/12/19 13:39:19 by vbleskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)

@@ -6,11 +6,10 @@
 /*   By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:05:51 by vbleskin          #+#    #+#             */
-/*   Updated: 2025/11/07 12:18:18 by vbleskin         ###   ########.fr       */
+/*   Updated: 2025/12/19 13:39:12 by vbleskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)

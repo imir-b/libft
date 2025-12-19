@@ -6,12 +6,11 @@
 /*   By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 20:24:35 by vbleskin          #+#    #+#             */
-/*   Updated: 2025/12/18 22:52:43 by vbleskin         ###   ########.fr       */
+/*   Updated: 2025/12/19 13:41:50 by vbleskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static void	*ft_free_all(char **strs)
 {
@@ -53,7 +52,6 @@ static int	ft_countwords(const char *str, char sep)
 	}
 	return (count);
 }
-
 
 char	**ft_split(const char *str, char sep)
 {

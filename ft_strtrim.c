@@ -6,13 +6,11 @@
 /*   By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 02:00:40 by vbleskin          #+#    #+#             */
-/*   Updated: 2025/11/14 21:08:00 by vbleskin         ###   ########.fr       */
+/*   Updated: 2025/12/19 13:41:14 by vbleskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
-// #include <stdio.h>
 
 static int	ft_isset(char c, char const *set)
 {
@@ -48,11 +46,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(str, s1 + start, size);
 	return (str);
 }
-
-// int main (void)
-// {
-// 	char const *set = " ";
-// 	char const *s1 = "    test     test      ";
-// 	char *s2 = ft_strtrim(s1, set);
-// 	printf("%s", s2);
-// }
