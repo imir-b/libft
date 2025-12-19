@@ -6,7 +6,7 @@
 /*   By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 13:47:09 by vbleskin          #+#    #+#             */
-/*   Updated: 2025/12/19 13:56:26 by vbleskin         ###   ########.fr       */
+/*   Updated: 2025/12/19 19:26:37 by vbleskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,20 @@ int			ft_isascii(int c);
  * - return : une valeur si VRAI et 0 si FAUX.
  */
 int			ft_isprint(int c);
+
+/**
+ * Verifie si un caractere est une lettre majuscule,
+ * - int c : le caractere a verifier,
+ * - return : une valeur si VRAI et 0 si FAUX.
+ */
+int			ft_isupper(int c);
+
+/**
+ * Verifie si un caractere est une lettre minuscule,
+ * - int c : le caractere a verifier,
+ * - return : une valeur si VRAI et 0 si FAUX.
+ */
+int			ft_islower(int c);
 
 /**
  * Convertit une lettre minuscule en majuscule,
@@ -146,6 +160,14 @@ char		*ft_strnstr(const char *big, const char *little, size_t len);
  * - return : un pointeur vers la nouvelle chaine ou NULL.
  */
 char		*ft_strdup(const char *s);
+
+/**
+ * Duplique jusqu'a 'n' caracteres de la chaine 'src'
+ * - const char *src : la chaine a dupliquer,
+ * - size_t n : le nombre de caracteres a dupliquer,
+ * - return : un pointeur vers la nouvelle chaine ou NULL.
+ */
+char		*ft_strndup(char *src, size_t n);
 
 /**
  * Alloue et retourne une sous-chaine a partir de s,

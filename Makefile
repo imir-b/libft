@@ -6,7 +6,7 @@
 #    By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:11:54 by vbleskin          #+#    #+#              #
-#    Updated: 2025/12/19 14:40:24 by vbleskin         ###   ########.fr        #
+#    Updated: 2025/12/19 14:53:39 by vbleskin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,9 @@ SRC_LIST	=	$(LIST_DIR)ft_lstadd_back.c $(LIST_DIR)ft_lstadd_front.c \
 				$(LIST_DIR)ft_lstiter.c $(LIST_DIR)ft_lstlast.c \
 				$(LIST_DIR)ft_lstmap.c $(LIST_DIR)ft_lstnew.c \
 				$(LIST_DIR)ft_lstsize.c
+
+SRC_PRINTF	=	$(PRINTF_DIR)printf.c parsing.c parsing_flags.c handle_numbers.c handle_text.c \
+		utils_write.c utils.c utils2.c
 
 
 SRC_FILES   =   $(SRC_CTYPE) $(SRC_STR) $(SRC_MEM) $(SRC_CONV) \

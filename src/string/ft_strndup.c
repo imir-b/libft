@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 14:25:59 by vbleskin          #+#    #+#             */
-/*   Updated: 2025/12/19 17:00:18 by vbleskin         ###   ########.fr       */
+/*   Created: 2025/12/19 19:13:06 by vbleskin          #+#    #+#             */
+/*   Updated: 2025/12/19 19:21:33 by vbleskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+char	*ft_strndup(char *src, size_t n)
 {
-	if (ft_islower(c) || ft_isupper(c))
-		return (1024);
-	else
-		return (0);
+	char	*dest;
+	size_t	len;
+
+	len = 0;
+	while (src[len] && len < n)
+		len++;
+	dest = malloc(sizeof(char) * (len + 1));
+	if (!dest)
+		return (NULL);
+	ft_memcpy(dest, src, len);
+	dest[len] = '\0';
+	return (dest);
 }
