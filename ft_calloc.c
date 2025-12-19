@@ -6,7 +6,7 @@
 /*   By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:39:11 by vbleskin          #+#    #+#             */
-/*   Updated: 2025/11/12 19:23:55 by vbleskin         ###   ########.fr       */
+/*   Updated: 2025/12/19 12:59:10 by vbleskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 #include <stdlib.h>
 #include <limits.h>
 
-void	*ft_calloc(size_t nmemb, size_t s)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*buffer;
-	size_t	size;
 
-	if (s != 0 && nmemb > __SIZE_MAX__ / s)
+	if (size != 0 && nmemb > __SIZE_MAX__ / size)
 		return (NULL);
-	size = s * nmemb;
-	buffer = malloc(size);
+	buffer = malloc(size * nmemb);
 	if (!buffer)
 		return (NULL);
-	ft_bzero(buffer, size);
+	ft_bzero(buffer, size * nmemb);
 	return (buffer);
 }
