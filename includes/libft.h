@@ -6,7 +6,7 @@
 /*   By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 13:47:09 by vbleskin          #+#    #+#             */
-/*   Updated: 2025/12/19 13:39:07 by vbleskin         ###   ########.fr       */
+/*   Updated: 2025/12/19 13:56:26 by vbleskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,15 +107,6 @@ size_t		ft_strlcpy(char *dest, const char *src, size_t s);
 size_t		ft_strlcat(char *dest, const char *src, size_t s);
 
 /**
- * Concatene src a la fin de dest en garantissant la terminaison '\0',
- * - char *dest : la chaine de destination,
- * - const char *src : la chaine a ajouter,
- * - size_t s : la taille totale du buffer dest,
- * - return : la longueur totale de la chaine qu'on a essaye de creer.
- */
-size_t		ft_strlcat(char *dest, const char *src, size_t s);
-
-/**
  * Cherche la premiere occurrence d'un caractere dans une chaine,
  * - const char *s : la chaine a analyser,
  * - int c : le caractere a rechercher,
@@ -150,11 +141,77 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strnstr(const char *big, const char *little, size_t len);
 
 /**
+ * Duplique une chaine de caracteres,
+ * - const char *s : la chaine a dupliquer,
+ * - return : un pointeur vers la nouvelle chaine ou NULL.
+ */
+char		*ft_strdup(const char *s);
+
+/**
+ * Alloue et retourne une sous-chaine a partir de s,
+ * - char const *s : la chaine d'origine,
+ * - unsigned int start : l'index de depart,
+ * - size_t len : la taille max de la sous-chaine,
+ * - return : la sous-chaine allouee ou NULL.
+ */
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+
+/**
+ * Alloue et retourne la concatenation de s1 et s2,
+ * - char const *s1 : la premiere chaine,
+ * - char const *s2 : la seconde chaine,
+ * - return : la nouvelle chaine ou NULL.
+ */
+char		*ft_strjoin(char const *s1, char const *s2);
+
+/**
+ * Alloue et retourne une copie de s1 sans les caracteres set au debut/fin,
+ * - char const *s1 : la chaine a nettoyer,
+ * - char const *set : les caracteres a retirer,
+ * - return : la chaine nettoyee ou NULL.
+ */
+char		*ft_strtrim(char const *s1, char const *set);
+
+/**
+ * Alloue et retourne un tableau de chaines obtenu en separant s par c,
+ * - char const *s : la chaine a decouper,
+ * - char c : le caractere separateur,
+ * - return : le tableau de chaines (termine par NULL) ou NULL.
+ */
+char		**ft_split(char const *s, char c);
+
+/**
+ * Applique la fonction f a chaque caractere de s pour creer une nouvelle chaine,
+ * - char const *s : la chaine source,
+ * - char (*f) : la fonction a appliquer,
+ * - return : la nouvelle chaine modifiee ou NULL.
+ */
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+/**
+ * Applique la fonction f a chaque caractere de s (modification sur place),
+ * - char *s : la chaine a modifier,
+ * - void (*f) : la fonction a appliquer.
+ */
+void		ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+//
+// ------ FONCTIONS DE CONVERSION ------
+//
+
+/**
  * Convertit le debut d'une chaine en entier (atoi),
  * - const char *str : la chaine a convertir,
  * - return : l'entier converti.
  */
 int			ft_atoi(const char *str);
+
+/**
+ * Alloue et retourne une chaine representant l'entier n,
+ * - int n : l'entier a convertir,
+ * - return : la chaine representant l'entier ou NULL.
+ */
+char		*ft_itoa(int n);
 
 //
 // ------ FONCTIONS D'ALLOCATIONS & MANIPULATION DE MEMOIRE ------
@@ -219,68 +276,6 @@ void		*ft_memmove(void *dest, const void *src, size_t n);
  * - return : un pointeur vers la memoire allouee ou NULL.
  */
 void		*ft_calloc(size_t nmemb, size_t size);
-
-/**
- * Duplique une chaine de caracteres,
- * - const char *s : la chaine a dupliquer,
- * - return : un pointeur vers la nouvelle chaine ou NULL.
- */
-char		*ft_strdup(const char *s);
-
-/**
- * Alloue et retourne une sous-chaine a partir de s,
- * - char const *s : la chaine d'origine,
- * - unsigned int start : l'index de depart,
- * - size_t len : la taille max de la sous-chaine,
- * - return : la sous-chaine allouee ou NULL.
- */
-char		*ft_substr(char const *s, unsigned int start, size_t len);
-
-/**
- * Alloue et retourne la concatenation de s1 et s2,
- * - char const *s1 : la premiere chaine,
- * - char const *s2 : la seconde chaine,
- * - return : la nouvelle chaine ou NULL.
- */
-char		*ft_strjoin(char const *s1, char const *s2);
-
-/**
- * Alloue et retourne une copie de s1 sans les caracteres set au debut/fin,
- * - char const *s1 : la chaine a nettoyer,
- * - char const *set : les caracteres a retirer,
- * - return : la chaine nettoyee ou NULL.
- */
-char		*ft_strtrim(char const *s1, char const *set);
-
-/**
- * Alloue et retourne un tableau de chaines obtenu en separant s par c,
- * - char const *s : la chaine a decouper,
- * - char c : le caractere separateur,
- * - return : le tableau de chaines (termine par NULL) ou NULL.
- */
-char		**ft_split(char const *s, char c);
-
-/**
- * Alloue et retourne une chaine representant l'entier n,
- * - int n : l'entier a convertir,
- * - return : la chaine representant l'entier ou NULL.
- */
-char		*ft_itoa(int n);
-
-/**
- * Applique la fonction f a chaque caractere de s pour creer une nouvelle chaine,
- * - char const *s : la chaine source,
- * - char (*f) : la fonction a appliquer,
- * - return : la nouvelle chaine modifiee ou NULL.
- */
-char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-
-/**
- * Applique la fonction f a chaque caractere de s (modification sur place),
- * - char *s : la chaine a modifier,
- * - void (*f) : la fonction a appliquer.
- */
-void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 //
 // ------ FONCTIONS D'ECRITURE (file descriptor) ------
