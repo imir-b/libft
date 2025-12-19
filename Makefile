@@ -6,7 +6,7 @@
 #    By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:11:54 by vbleskin          #+#    #+#              #
-#    Updated: 2025/12/19 14:53:39 by vbleskin         ###   ########.fr        #
+#    Updated: 2025/12/19 19:33:27 by vbleskin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,8 @@ MEM_DIR		=	memory/
 CONV_DIR	=	conversions/
 IO_DIR		=	io/
 LIST_DIR	=	list/
-
+PRINTF_DIR	=	printf/
+GNL_DIR		=	gnl/
 
 # SRCS
 
@@ -67,12 +68,19 @@ SRC_LIST	=	$(LIST_DIR)ft_lstadd_back.c $(LIST_DIR)ft_lstadd_front.c \
 				$(LIST_DIR)ft_lstmap.c $(LIST_DIR)ft_lstnew.c \
 				$(LIST_DIR)ft_lstsize.c
 
-SRC_PRINTF	=	$(PRINTF_DIR)printf.c parsing.c parsing_flags.c handle_numbers.c handle_text.c \
-		utils_write.c utils.c utils2.c
+SRC_PRINTF	=	$(PRINTF_DIR)ft_printf.c $(PRINTF_DIR)printf_parsing.c \
+				$(PRINTF_DIR)printf_parsing_flags.c \
+				$(PRINTF_DIR)printf_handle_numbers.c \
+				$(PRINTF_DIR)printf_handle_text.c \
+				$(PRINTF_DIR)printf_utils_write.c \
+				$(PRINTF_DIR)printf_utils_list.c \
+				$(PRINTF_DIR)printf_utils_libft.c \
+				$(PRINTF_DIR)printf_utils.c
 
+SRC_GNL		=	$(GNL_DIR)get_next_line.c $(GNL_DIR)get_next_line_utils.c
 
 SRC_FILES   =   $(SRC_CTYPE) $(SRC_STR) $(SRC_MEM) $(SRC_CONV) \
-                $(SRC_IO) $(SRC_LIST)
+                $(SRC_IO) $(SRC_LIST) $(SRC_PRINTF) $(SRC_GNL)
 
 SRCS		=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS		=	$(addprefix $(OBJ_DIR), $(SRC_FILES:.c=.o))
