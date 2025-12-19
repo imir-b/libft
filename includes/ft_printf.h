@@ -6,7 +6,7 @@
 /*   By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 13:54:19 by vbleskin          #+#    #+#             */
-/*   Updated: 2025/12/19 19:03:29 by vbleskin         ###   ########.fr       */
+/*   Updated: 2025/12/19 19:47:28 by vbleskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int				ft_pf_putchar(int i, t_struct *list);
  * - ret : la liste intitialisee.
  */
 t_struct		*ft_pf_init_list(void);
+
 /**
  * Reinitialise list avec les valeurs par defaut,
  * - t_struct *list : la structure a reset,
@@ -95,6 +96,7 @@ void			ft_pf_reset_list(t_struct *list);
  * Original ft_strchr de libft sans le segfault.
  */
 const char		*ft_pf_strchr(const char *str, char c);
+
 /**
  * Original ft_strlen de libft sans le segfault.
  */
@@ -199,6 +201,7 @@ int				ft_handle_ptr(void *ptr, t_struct *list);
  * - ret : le nombre de caracteres qu'on a affiche.
  */
 int				ft_put_padding(int width, int len, char c, t_struct *list);
+
 /**
  * Cherche si des flags (-0# +) sont dans 's' et met a jour les bool de 'list',
  * - char *s : la chaine de caractere dans laquelle on cherche les flags,
@@ -206,6 +209,7 @@ int				ft_put_padding(int width, int len, char c, t_struct *list);
  * - ret : un pointeur sur le dernier flag lu dans s
  */
 char			*ft_check_flags(char *s, t_struct *list);
+
 /**
  * Parcours 's', cherche '%' dedans et appelle les fonctions pour ecrire ou -
  * ft_process_percent pour lire et ecrire les arguments,
