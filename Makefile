@@ -6,7 +6,7 @@
 #    By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:11:54 by vbleskin          #+#    #+#              #
-#    Updated: 2025/12/19 19:33:27 by vbleskin         ###   ########.fr        #
+#    Updated: 2025/12/23 14:21:26 by vbleskin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ LIST_DIR	=	list/
 PRINTF_DIR	=	printf/
 GNL_DIR		=	gnl/
 
-# SRCS
+# FILES
 
 SRC_CTYPE	=	$(CTYPE_DIR)ft_isalnum.c $(CTYPE_DIR)ft_isalpha.c \
 				$(CTYPE_DIR)ft_isascii.c $(CTYPE_DIR)ft_isdigit.c \
@@ -92,7 +92,7 @@ all:		$(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 			@mkdir -p $(dir $@)
-			@$(CC) $(CFLAGS) -c $< -o $@
+			$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)
 			$(AR) $@ $^
@@ -103,6 +103,6 @@ clean:
 fclean: 	clean
 			$(RM) $(NAME)
 
-re: 		fclean $(NAME)
+re: 		fclean all
 
 .PHONY:		all clean fclean re
