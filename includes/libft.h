@@ -6,13 +6,15 @@
 /*   By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 13:47:09 by vbleskin          #+#    #+#             */
-/*   Updated: 2025/12/19 19:26:37 by vbleskin         ###   ########.fr       */
+/*   Updated: 2025/12/29 23:09:48 by vbleskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "printf.h"
+# include "get_next_line.h"
 # include <stddef.h>
 # include <unistd.h>
 # include <stdlib.h>

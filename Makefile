@@ -6,7 +6,7 @@
 #    By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:11:54 by vbleskin          #+#    #+#              #
-#    Updated: 2025/12/23 14:21:26 by vbleskin         ###   ########.fr        #
+#    Updated: 2025/12/30 00:05:15 by vbleskin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,12 +45,13 @@ SRC_CTYPE	=	$(CTYPE_DIR)ft_isalnum.c $(CTYPE_DIR)ft_isalpha.c \
 				$(CTYPE_DIR)ft_toupper.c
 
 SRC_STR		=	$(STR_DIR)ft_split.c $(STR_DIR)ft_strchr.c \
-				$(STR_DIR)ft_strdup.c $(STR_DIR)ft_striteri.c \
-				$(STR_DIR)ft_strjoin.c $(STR_DIR)ft_strlcat.c \
-				$(STR_DIR)ft_strlcpy.c $(STR_DIR)ft_strlen.c \
-				$(STR_DIR)ft_strmapi.c $(STR_DIR)ft_strncmp.c \
-				$(STR_DIR)ft_strnstr.c $(STR_DIR)ft_strrchr.c \
-				$(STR_DIR)ft_strtrim.c $(STR_DIR)ft_substr.c
+				$(STR_DIR)ft_strdup.c $(STR_DIR)ft_strndup.c \
+				$(STR_DIR)ft_striteri.c $(STR_DIR)ft_strjoin.c \
+				$(STR_DIR)ft_strlcat.c $(STR_DIR)ft_strlcpy.c \
+				$(STR_DIR)ft_strlen.c $(STR_DIR)ft_strmapi.c \
+				$(STR_DIR)ft_strncmp.c $(STR_DIR)ft_strnstr.c \
+				$(STR_DIR)ft_strrchr.c $(STR_DIR)ft_strtrim.c \
+				$(STR_DIR)ft_substr.c
 
 SRC_MEM		=	$(MEM_DIR)ft_bzero.c $(MEM_DIR)ft_calloc.c \
 				$(MEM_DIR)ft_memchr.c $(MEM_DIR)ft_memcmp.c \
