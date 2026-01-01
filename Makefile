@@ -6,7 +6,7 @@
 #    By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:11:54 by vbleskin          #+#    #+#              #
-#    Updated: 2025/12/30 00:05:15 by vbleskin         ###   ########.fr        #
+#    Updated: 2026/01/01 17:33:21 by vbleskin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,16 +93,16 @@ all:		$(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 			@mkdir -p $(dir $@)
-			$(CC) $(CFLAGS) -c $< -o $@
+			@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)
-			$(AR) $@ $^
+			@$(AR) $@ $^
 
 clean:
-			$(RM) $(OBJ_DIR)
+			@$(RM) $(OBJ_DIR)
 
 fclean: 	clean
-			$(RM) $(NAME)
+			@$(RM) $(NAME)
 
 re: 		fclean all
 
