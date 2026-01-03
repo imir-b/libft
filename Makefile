@@ -6,7 +6,7 @@
 #    By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:11:54 by vbleskin          #+#    #+#              #
-#    Updated: 2026/01/01 17:33:21 by vbleskin         ###   ########.fr        #
+#    Updated: 2026/01/03 08:09:47 by vbleskin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,10 +96,12 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 			@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)
+			@echo "$(NAME) compiled successfuly"
 			@$(AR) $@ $^
 
 clean:
 			@$(RM) $(OBJ_DIR)
+			@echo "$(NAME) cleaned successfuly"
 
 fclean: 	clean
 			@$(RM) $(NAME)
