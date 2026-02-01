@@ -5,12 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vlad <vlad@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/11/04 15:11:54 by vbleskin          #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2026/02/01 22:04:24 by vlad             ###   ########.fr        #
-=======
-#    Updated: 2026/01/03 08:09:47 by vbleskin         ###   ########.fr        #
->>>>>>> f5c1d4754793a40c8fe4d1e00383edcbb7992af5
+#    Created: 2026/02/01 22:20:36 by vlad              #+#    #+#              #
+#    Updated: 2026/02/01 22:22:20 by vlad             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,15 +46,12 @@ SRC_CTYPE	=	$(CTYPE_DIR)ft_isalnum.c $(CTYPE_DIR)ft_isalpha.c \
 				$(CTYPE_DIR)ft_toupper.c
 
 SRC_STR		=	$(STR_DIR)ft_split.c $(STR_DIR)ft_strchr.c \
-<<<<<<< HEAD
 				$(STR_DIR)ft_strdup.c $(STR_DIR)ft_striteri.c \
 				$(STR_DIR)ft_strjoin.c $(STR_DIR)ft_strlcat.c \
 				$(STR_DIR)ft_strlcpy.c $(STR_DIR)ft_strlen.c \
 				$(STR_DIR)ft_strmapi.c $(STR_DIR)ft_strncmp.c \
 				$(STR_DIR)ft_strnstr.c $(STR_DIR)ft_strrchr.c \
 				$(STR_DIR)ft_strtrim.c $(STR_DIR)ft_substr.c \
-				$(STR_DIR)ft_strndup.c
-=======
 				$(STR_DIR)ft_strdup.c $(STR_DIR)ft_strndup.c \
 				$(STR_DIR)ft_striteri.c $(STR_DIR)ft_strjoin.c \
 				$(STR_DIR)ft_strlcat.c $(STR_DIR)ft_strlcpy.c \
@@ -66,7 +59,6 @@ SRC_STR		=	$(STR_DIR)ft_split.c $(STR_DIR)ft_strchr.c \
 				$(STR_DIR)ft_strncmp.c $(STR_DIR)ft_strnstr.c \
 				$(STR_DIR)ft_strrchr.c $(STR_DIR)ft_strtrim.c \
 				$(STR_DIR)ft_substr.c
->>>>>>> f5c1d4754793a40c8fe4d1e00383edcbb7992af5
 
 SRC_MEM		=	$(MEM_DIR)ft_bzero.c $(MEM_DIR)ft_calloc.c \
 				$(MEM_DIR)ft_memchr.c $(MEM_DIR)ft_memcmp.c \
