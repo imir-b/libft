@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+         #
+#    By: vlad <vlad@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:11:54 by vbleskin          #+#    #+#              #
-#    Updated: 2025/12/23 14:21:26 by vbleskin         ###   ########.fr        #
+#    Updated: 2026/02/01 22:04:24 by vlad             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,8 @@ GNL_DIR		=	gnl/
 
 SRC_CTYPE	=	$(CTYPE_DIR)ft_isalnum.c $(CTYPE_DIR)ft_isalpha.c \
 				$(CTYPE_DIR)ft_isascii.c $(CTYPE_DIR)ft_isdigit.c \
-				$(CTYPE_DIR)ft_isprint.c $(CTYPE_DIR)ft_tolower.c \
+				$(CTYPE_DIR)ft_isprint.c $(CTYPE_DIR)ft_islower.c \
+				$(CTYPE_DIR)ft_isupper.c $(CTYPE_DIR)ft_tolower.c \
 				$(CTYPE_DIR)ft_toupper.c
 
 SRC_STR		=	$(STR_DIR)ft_split.c $(STR_DIR)ft_strchr.c \
@@ -50,7 +51,8 @@ SRC_STR		=	$(STR_DIR)ft_split.c $(STR_DIR)ft_strchr.c \
 				$(STR_DIR)ft_strlcpy.c $(STR_DIR)ft_strlen.c \
 				$(STR_DIR)ft_strmapi.c $(STR_DIR)ft_strncmp.c \
 				$(STR_DIR)ft_strnstr.c $(STR_DIR)ft_strrchr.c \
-				$(STR_DIR)ft_strtrim.c $(STR_DIR)ft_substr.c
+				$(STR_DIR)ft_strtrim.c $(STR_DIR)ft_substr.c \
+				$(STR_DIR)ft_strndup.c
 
 SRC_MEM		=	$(MEM_DIR)ft_bzero.c $(MEM_DIR)ft_calloc.c \
 				$(MEM_DIR)ft_memchr.c $(MEM_DIR)ft_memcmp.c \
@@ -92,16 +94,18 @@ all:		$(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 			@mkdir -p $(dir $@)
-			$(CC) $(CFLAGS) -c $< -o $@
+			@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)
-			$(AR) $@ $^
+			@echo "$(NAME) compiled successfuly"
+			@$(AR) $@ $^
 
 clean:
-			$(RM) $(OBJ_DIR)
+			@$(RM) $(OBJ_DIR)
+			@echo "$(NAME) cleaned successfuly"
 
 fclean: 	clean
-			$(RM) $(NAME)
+			@$(RM) $(NAME)
 
 re: 		fclean all
 
