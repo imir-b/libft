@@ -6,7 +6,7 @@
 /*   By: vbleskin <vbleskin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:31:07 by vbleskin          #+#    #+#             */
-/*   Updated: 2025/12/19 13:40:34 by vbleskin         ###   ########.fr       */
+/*   Updated: 2026/01/19 04:02:16 by vbleskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,25 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	char	*ptr;
+	unsigned char	*p;
+	unsigned long	*l;
 
-	i = 0;
-	ptr = (char *)s;
-	while (i < n)
+	p = (unsigned char *)s;
+	while (n > 0 && (size_t)p % sizeof(unsigned long))
 	{
-		ptr[i] = '\0';
-		i++;
+		*p++ = 0;
+		n--;
+	}
+	l = (unsigned long *)p;
+	while (n >= sizeof(unsigned long))
+	{
+		*l++ = 0;
+		n -= sizeof(unsigned long);
+	}
+	p = (unsigned char *)l;
+	while (n > 0)
+	{
+		*p++ = 0;
+		n--;
 	}
 }

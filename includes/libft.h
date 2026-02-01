@@ -6,13 +6,19 @@
 /*   By: vlad <vlad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 13:47:09 by vbleskin          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2025/12/25 21:33:15 by vlad             ###   ########.fr       */
+=======
+/*   Updated: 2025/12/29 23:09:48 by vbleskin         ###   ########.fr       */
+>>>>>>> f5c1d4754793a40c8fe4d1e00383edcbb7992af5
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "printf.h"
+# include "get_next_line.h"
 # include <stddef.h>
 # include <unistd.h>
 # include <stdlib.h>
